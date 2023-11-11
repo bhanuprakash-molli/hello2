@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The man who moved a mountain</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `In a small village nestled between rolling hills, there lived a diligent young girl named Lily. She harbored a dream of creating a community garden that would bring both beauty and sustenance to her tight-knit village.
+
+However, Lily faced a seemingly insurmountable challenge—the village had a shortage of fertile land, and most residents were skeptical about the success of a community garden. Undeterred, Lily decided to turn a forgotten patch of land on the outskirts of the village into her dream garden.
+
+Armed with determination and a handful of seeds, Lily began to toil the soil every day, pouring her heart into the earth. Word of her endeavor spread, and soon, a few curious villagers joined her in this communal effort. Together, they cleared the land, planted seeds, and nurtured the sprouting greenery.
+
+As the garden flourished, so did a sense of camaraderie among the villagers. They shared stories, laughter, and the fruits of their labor. The once-neglected patch of land became a vibrant haven, adorned with flowers, vegetables, and the joy of collective accomplishment.
+
+Lily's community garden not only provided fresh produce for the villagers but also became a symbol of unity and shared purpose. The villagers, once skeptical, now marveled at the beauty that could emerge from a seemingly barren patch of land when nurtured with care and community spirit.
+
+Lily's simple dream had blossomed into a source of pride for the entire village, demonstrating that even the smallest acts could create a positive ripple effect, transforming not only the physical landscape but also the hearts of those involved.
+
+And so, the village thrived, not just because of the bounty from the garden but because the seeds of collaboration and determination had taken root in the hearts of its residents, reminding them that a shared dream could turn a humble patch of earth into a flourishing testament to the strength of community.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
